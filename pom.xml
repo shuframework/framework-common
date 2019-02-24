@@ -5,15 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.shuframework</groupId>
-    <artifactId>common-base</artifactId>
-    <!--<version>1.0-SNAPSHOT</version>-->
-    <version>${shuframework-snapshot.version}</version>
+    <artifactId>framework-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--这样处理是报错的，找不到version-->
+    <!--<version>${shuframework-snapshot.version}</version>-->
     <modules>
-        <module>common-core</module>
         <module>common-third-tools</module>
-        <module>common-starter</module>
     </modules>
     <packaging>pom</packaging>
+	
+    <parent>
+        <groupId>com.shuframework</groupId>
+        <artifactId>shu-parent</artifactId>
+        <version>1.0</version>
+    </parent>
+    
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,16 +27,25 @@
         <shuframework-snapshot.version>1.0-SNAPSHOT</shuframework-snapshot.version>
     </properties>
 
-    <parent>
-        <groupId>com.shuframework</groupId>
-        <artifactId>shu-parent</artifactId>
-        <version>1.0</version>
-    </parent>
 
     <dependencies>
         <dependency>
+            <groupId>com.shuframework</groupId>
+            <artifactId>common-base</artifactId>
+            <version>${shuframework-release.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
 
