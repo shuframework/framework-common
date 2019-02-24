@@ -9,6 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <!--这样处理是报错的，找不到version-->
     <!--<version>${shuframework-snapshot.version}</version>-->
+
+
+    <!--common-core
+    common-starter
+    common-third-tools-->
     <modules>
         <module>common-third-tools</module>
     </modules>
