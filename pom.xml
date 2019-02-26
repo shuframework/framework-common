@@ -16,6 +16,7 @@
     common-third-tools-->
     <modules>
         <module>common-third-tools</module>
+        <module>common-starter</module>
     </modules>
     <packaging>pom</packaging>
 	

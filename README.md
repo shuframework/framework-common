@@ -6,9 +6,11 @@
 
 | 功能说明   |  jar  |
 | ----- | ----- |
+| bean、map的反射操作 | BeanUtil |
 | 加密 | base64、md5、sha1、sha256 |
 | Excel导出 | poi |
-| json | gson、fastjson |
-| xml | dom4j和xstream |
+| json | gson、fastjson、jackson |
 | 邮件 | mail 1.4.7 |
-|  |  |
+| 客户端模拟http | HttpClientUtil |
+| ftp | commons-net |
+| 文件上传（云文件） | qiniu |
