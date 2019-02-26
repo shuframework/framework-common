@@ -27,6 +27,7 @@ import java.util.Map;
  * 基于poi的excel工具类
  * 相对老版来说 用Workbook、Sheet、Row、Cell等父类 来接收处理就避免了不同后缀写2套的麻烦
  * 还可以使用easyexcel 来实现大数量的情况
+ * todo 根据List<xxVO> 导出,如果有时间类型 自动转换为String
  *
  * @author shuheng
  */
@@ -41,7 +42,6 @@ public class ExcelUtil {
 	 */
 	public static List<String[]> read(String filePath) throws IOException {
 		File file = new File(filePath);
-		
 		return read(file);
 	}
 	
@@ -54,9 +54,7 @@ public class ExcelUtil {
 	 */
 	public static List<String[]> read(File file) throws IOException {
 		String fileName = file.getName();
-		// 创建输入流
 		InputStream inStream = new FileInputStream(file);
-
 		return read(fileName, inStream);
 	}
 	
