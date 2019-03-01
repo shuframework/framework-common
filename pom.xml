@@ -4,41 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.shuframework</groupId>
-    <artifactId>framework-common</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <!--这样处理是报错的，找不到version-->
-    <!--<version>${shuframework-snapshot.version}</version>-->
-
-
-    <!--common-core
-    common-starter
-    common-third-tools-->
-    <modules>
-        <module>common-third-tools</module>
-        <module>common-starter</module>
-    </modules>
-    <packaging>pom</packaging>
-	
     <parent>
         <groupId>com.shuframework</groupId>
         <artifactId>shu-parent</artifactId>
         <version>1.0</version>
     </parent>
-    
 
-    <properties>
+    <groupId>com.shuframework</groupId>
+    <artifactId>framework-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <!--这样处理是报错的，找不到version-->
+    <!--<version>${shuframework-snapshot.version}</version>-->
+
+    <modules>
+        <module>common-third-tools</module>
+        <module>common-starter</module>
+    </modules>
+
+
+    <!--<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <shuframework-release.version>1.0</shuframework-release.version>
         <shuframework-snapshot.version>1.0-SNAPSHOT</shuframework-snapshot.version>
-    </properties>
-
+    </properties>-->
 
     <dependencies>
         <dependency>
             <groupId>com.shuframework</groupId>
             <artifactId>common-base</artifactId>
-            <version>${shuframework-release.version}</version>
+            <!--<version>1.0</version>-->
         </dependency>
 
         <dependency>
