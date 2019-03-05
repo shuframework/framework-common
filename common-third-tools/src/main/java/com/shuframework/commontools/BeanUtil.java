@@ -30,6 +30,7 @@ import java.util.Map;
  * @author shuheng
  */
 public class BeanUtil extends org.springframework.beans.BeanUtils {
+
 	private BeanUtil(){}
 
 	/**
