@@ -16,6 +16,7 @@
     <modules>
         <module>tools-starter-excel</module>
         <module>tools-starter-xml</module>
+        <module>tools-starter-reptile</module>
     </modules>
 
 </project>

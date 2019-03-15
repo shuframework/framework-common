@@ -1,6 +1,6 @@
 # framework-common 
 
-公共服务模块,framework-common 是个父模块,含common-third-tools(第三方工具类)、common-core(核心部分)、common-starter(微服务集成部分)
+公共服务模块,framework-common 是个父模块,含common-third-tools(第三方工具类)、common-core(业务核心部分)、common-starter(微服务集成部分)
 
 ## common-third-tools 模块
 
@@ -21,7 +21,14 @@
     google-collections (Google)
     
     
+## common-core 模块 
+
+common-core是业务核心模块, 配置按需常用的业务数据（尽量不依赖第三方jar）
+
+
+    
 ## common-starter 模块 
+
 common-starter是个父模块, 配置按需常用的服务
 
 ### tools-starter-excel 
