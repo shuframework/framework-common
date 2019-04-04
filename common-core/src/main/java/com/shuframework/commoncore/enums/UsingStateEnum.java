@@ -2,7 +2,7 @@ package com.shuframework.commoncore.enums;
 
 
 /**
- * 使用 类型
+ * 使用状态
  *
  * @author shuheng
  */
