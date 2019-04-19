@@ -32,4 +32,18 @@ public enum AuditingStateEnum {
         return this.name;
     }
 
+    /**
+     * 根据code 获得name, 如果匹配不上返回 ""
+     * @param code
+     * @return
+     */
+    public static String getNameByCode(String code){
+        for (AuditingStateEnum typeEnum : AuditingStateEnum.values()) {
+            if(typeEnum.getCode().equals(code)){
+                return typeEnum.getName();
+            }
+        }
+        return "";
+    }
+
 }

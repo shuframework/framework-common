@@ -73,7 +73,7 @@ public class Bean2XmlUtil{
      */
     @SuppressWarnings("unchecked")
 	public static <T> T toBean(String xmlStr, Class<T> clazz, String aliasName) {
-		// 注意：不是new Xstream(); 否则报错：java.lang.NoClassDefFoundError:
+		// 注意：不是new Xstream(); 否则报错：java.lang3.NoClassDefFoundError:
 		XStream xstream = new XStream(new DomDriver());
 		xstream.alias(aliasName, clazz);
 		T obj = (T) xstream.fromXML(xmlStr);
