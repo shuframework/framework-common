@@ -185,7 +185,8 @@ public class BeanUtil extends org.springframework.beans.BeanUtils {
 	}
 
 	/**
-	 * map转实体类（复杂对象不存在类型转换的问题）
+	 * map转实体类（复杂对象不存在类型转换的问题，支持日期转换）
+	 * 可能存在的异常 java.lang.Double cannot be cast to java.math.BigDecimal
 	 * 
 	 * @param map
 	 * @param t
