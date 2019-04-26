@@ -4,9 +4,12 @@ import org.apache.commons.codec.binary.Base64;
 
 /**
  * Base64 可逆加密,线上可以使用jdk8的Base64
+ * 用的是commons Base64实现
+ *
  * @author shuheng
  *
  */
+@Deprecated
 public class Base64Util {
 	
 	/**
