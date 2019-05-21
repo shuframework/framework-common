@@ -1,4 +1,4 @@
-package com.shuframework.commontools.protocol;
+package com.shuframework.commontools;
 
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;

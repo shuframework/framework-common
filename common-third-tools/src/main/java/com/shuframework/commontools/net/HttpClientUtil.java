@@ -1,4 +1,4 @@
-package com.shuframework.commontools.protocol;
+package com.shuframework.commontools.net;
 
 import com.shuframework.commontools.json.JsonUtil;
 import org.apache.http.NameValuePair;

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.shuframework</groupId>
-        <artifactId>shu-parent</artifactId>
+        <groupId>com.shuframework.boot2</groupId>
+        <artifactId>boot2-parent</artifactId>
         <version>1.0</version>
     </parent>
 

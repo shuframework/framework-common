@@ -1,4 +1,4 @@
-package com.shuframework.commontools.protocol;
+package com.shuframework.commontools.net;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
