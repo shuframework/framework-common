@@ -22,35 +22,6 @@ import java.util.Map;
  *       TypeToken类：用于创建type，比如泛型List<?>
  */
 public class GsonUtil {
-	
-	/**
-	 * 格式化Json
-	 * 
-	 * @param json
-	 */
-	public static String fromat(String json) {
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser jp = new JsonParser();
-		JsonElement je = jp.parse(json);
-		json = gson.toJson(je);
-		return json;
-	}
-	
-	/**
-	 * 该字符串可能转为 JSONObject 或 JSONArray
-	 * 
-	 * @param jsonStr
-	 */
-	public static boolean maybeJson(String jsonStr) {
-		boolean jsonFlag;
-		try {
-			new JsonParser().parse(jsonStr).getAsJsonObject();
-			jsonFlag = true;
-		} catch (Exception e) {
-			jsonFlag = false;
-		}
-		return jsonFlag;
-	}
 
 	/**
 	 * bean转换json <br>

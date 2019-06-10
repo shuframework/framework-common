@@ -19,6 +19,7 @@ import java.util.Map;
 public class JacksonUtil {
 
     // 定义jackson对象
+	// 这个比较耗时所有定义为静态的
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**

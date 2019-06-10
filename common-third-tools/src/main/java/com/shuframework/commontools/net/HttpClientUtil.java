@@ -87,7 +87,6 @@ public class HttpClientUtil {
 			// 执行请求
 			response = httpClient.execute(httpGet);
 		}
-				
 		return response;
 	}
 	
