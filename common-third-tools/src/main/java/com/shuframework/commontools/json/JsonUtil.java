@@ -84,8 +84,21 @@ public class JsonUtil {
 	 * @return 
 	 * @return
 	 */
-	public static <T> T jsonStr2Obj(String jsonStr,Class<T> clazz) {
+	public static <T> T jsonStr2Obj(String jsonStr, Class<T> clazz) {
 		T t = JSON.parseObject(jsonStr, clazz);
+		return t;
+	}
+	/**
+	 * 将json转为T对象 含泛型的
+	 *
+	 * jsonStr2Obj(jsonStr, new TypeReference<List<String>>(){})
+	 *
+	 * @param jsonStr
+	 * @return
+	 * @return
+	 */
+	public static <T> T jsonStr2Obj(String jsonStr, TypeReference<T> type) {
+		T t = JSON.parseObject(jsonStr, type);
 		return t;
 	}
 	

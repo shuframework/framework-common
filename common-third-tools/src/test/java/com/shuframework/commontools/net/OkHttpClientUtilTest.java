@@ -25,7 +25,7 @@ public class OkHttpClientUtilTest {
         String url = String.format("/%s/%s/chatgroups/%s/users?pagenum=%s&pagesize=%s",
                 orgname, appname, groupId, pagenum, pagesize);
         String token = " Bearer YWMtGYnKKogJEem4h5-tP6F29AAAAAAAAAAAAAAAAAAAAAEdiYlAbiwR6ZQJ5Yg139DfAgMAAAFrKsc4VQBPGgBBKuJ3iufc_ddOjqfzMyj1fs6GQPZzJOR6SqG5lpUtjw";
-        Result s = OkHttpClientUtil.getInstance().get(basePath+url, token);
+        String s = OkHttpClientUtil.getInstance().get(basePath+url, token);
         System.out.println(s);
     }
 
@@ -42,7 +42,7 @@ public class OkHttpClientUtilTest {
         paramMap.put("usernames", usernameList);
 
         String token = " Bearer YWMtGYnKKogJEem4h5-tP6F29AAAAAAAAAAAAAAAAAAAAAEdiYlAbiwR6ZQJ5Yg139DfAgMAAAFrKsc4VQBPGgBBKuJ3iufc_ddOjqfzMyj1fs6GQPZzJOR6SqG5lpUtjw";
-        Result s = OkHttpClientUtil.getInstance().post(basePath+url, token, JsonUtil.obj2JsonStr(paramMap));
+        String s = OkHttpClientUtil.getInstance().post(basePath+url, token, JsonUtil.obj2JsonStr(paramMap));
         System.out.println(s);
     }
 }

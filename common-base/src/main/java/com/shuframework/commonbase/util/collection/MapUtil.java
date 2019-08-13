@@ -18,7 +18,13 @@ import java.util.Set;
  * @author shuheng
  */
 public class MapUtil {
-	
+
+	public static <K> List<K> mapKey2List(Map<K, ?> map) {
+		List<K> list = new ArrayList<>();
+		map.forEach((k, v) -> list.add(k));
+		return list;
+	}
+
 	/**
 	 * 获取map key的最小值<br>
 	 * 

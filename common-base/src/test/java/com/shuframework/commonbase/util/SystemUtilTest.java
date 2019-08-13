@@ -5,6 +5,7 @@ import com.shuframework.commonbase.util.lang.DateUtil;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.Map;
 
 public class SystemUtilTest {
 
@@ -19,7 +20,12 @@ public class SystemUtilTest {
 		System.out.println(id);
 	}
 
-
+	@Test
+	public void urlParam2Map_test() {
+		String url = "http://xxxxx?p1=v1&p2=v2";
+		Map<String, String> map = SystemUtil.urlParam2Map(url);
+		System.out.println(map);
+	}
 	
 	@Test
 	public void getNewFilename_test() {

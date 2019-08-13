@@ -7,6 +7,7 @@ import com.shuframework.commonbase.util.lang.StringUtil;
 import com.shuframework.commonbase.util.random.RandomUtil;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -116,6 +117,25 @@ public class SystemUtil {
         return orderCode;
     }
 
+    /**
+     * 解析URL地址的参数为map
+     * 如 http://xxxxx?p1=v1&p2=v2 转成map是 {p1=v1, p2=v2}
+     * @param url
+     * @return
+     */
+    public static Map<String, String> urlParam2Map(String url) {
+        Map<String, String> map = new HashMap<>();
+        int index = url.indexOf("?");
+        if (index != -1) {
+            String paramStr = url.substring(index + 1);
+            String[] paramArr = paramStr.split("&");
+            for (String str : paramArr) {
+                String[] valArr = str.split("=");
+                map.put(valArr[0], valArr[1]);
+            }
+        }
+        return map;
+    }
 
     /**
      * 判断str是否为null或空串（去空格了）,是返回 true

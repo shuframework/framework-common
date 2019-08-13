@@ -29,6 +29,12 @@ public class MapUtilTest {
 		intMap.put(2, null);
 		intMap.put(5, "");
 	}
+
+	@Test
+	public void mapKey2List_test1() {
+		List<String> list = MapUtil.mapKey2List(strMap);
+		System.out.println(list);
+	}
 	
 	@Test
 	public void test11() {

@@ -12,6 +12,12 @@ import static org.junit.Assert.*;
 public class BigDecimalUtilTest {
 
     @Test
+    public void pow_test3() {
+        Long n = 1L;
+        System.out.println(String.valueOf(n));
+    }
+
+    @Test
     public void pow_test2() {
         BigDecimal num1 = new BigDecimal("2");
 //        BigDecimal num2 = new BigDecimal("3");

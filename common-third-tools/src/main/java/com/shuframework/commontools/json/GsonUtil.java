@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.google.gson.LongSerializationPolicy;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
@@ -35,6 +36,8 @@ public class GsonUtil {
 	public static String obj2JsonStr(Object obj) {
 		GsonBuilder builder = new GsonBuilder();
 		builder.setDateFormat("yyyy-MM-dd HH:mm:ss");
+		//gson默认会把数值,byte,int,short,long,float数据反序列化时，变成double类型。指定Long类型的数据序列化方式为字符串方式
+		builder.setLongSerializationPolicy(LongSerializationPolicy.STRING);
 		Gson gson = builder.create();
 		// Gson gson = new Gson();
 		String json = gson.toJson(obj);
