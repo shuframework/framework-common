@@ -4,12 +4,14 @@ import com.shuframework.jdkdemo.testmodel.BookInfo;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 /**
  * list的 filter和map示例 其实在Stream Api里面已经提供了
@@ -23,6 +25,7 @@ public class StreamDemo {
     @Before
     public void init() {
         bookInfoList = InitData.initBookInfoList();
+        System.out.println(bookInfoList);
     }
 
     @Test
@@ -42,9 +45,16 @@ public class StreamDemo {
     }
 
     @Test
-    public void sum_stream_test() {
-        bookInfoList = new ArrayList<>();
+    public void sum_Double_stream_test() {
         double sum = bookInfoList.stream().mapToDouble(book -> book.getPrice()).sum();
+        System.out.println(sum);
+    }
+
+    @Test
+    public void sum_BigDecimal_stream_test() {
+//        bookInfoList = new ArrayList<>();
+        BigDecimal sum = bookInfoList.stream().map(BookInfo::getPriceBig)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
         System.out.println(sum);
     }
 

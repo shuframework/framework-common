@@ -11,5 +11,11 @@
 
     <artifactId>common-base</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>src</scope>
+        </dependency>
+    </dependencies>
 </project>

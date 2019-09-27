@@ -2,7 +2,6 @@ package com.shuframework.commonbase.result;
 
 import com.shuframework.commonbase.enums.FailureEnum;
 import com.shuframework.commonbase.util.SystemUtil;
-import com.shuframework.commonbase.util.ValidateUtil;
 
 /**
  * 返回结果的工具类，包含了错误码
@@ -67,7 +66,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result successOfInsert(Object data) {
+    public static Result insertSuccess(Object data) {
         return success(ADD_OK, data);
     }
 
@@ -76,7 +75,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result successOfUpdate(Object data) {
+    public static Result updateSuccess(Object data) {
         return success(UPDATE_OK, data);
     }
 
@@ -85,7 +84,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result successOfDelete(Object data) {
+    public static Result deleteSuccess(Object data) {
         return success(DELETE_OK, data);
     }
 
@@ -136,10 +135,60 @@ public class ResultUtil {
     }
 
     /**
+     * 参数不能为空
+     */
+    public static Result paramEmptyFailure() {
+        return failure(FailureEnum.PARAMETER_FAILURE, "参数不能为空");
+    }
+    /**
+     * name 不能为空
+     */
+    public static Result paramEmptyFailure(String name) {
+        return failure(FailureEnum.PARAMETER_FAILURE, name + "不能为空");
+    }
+
+    /**
+     * 参数错误
+     * @param msg
+     */
+    public static Result paramFailure(String msg) {
+        return failure(FailureEnum.PARAMETER_FAILURE, msg);
+    }
+
+    /**
+     * 记录已存在
+     */
+    public static Result existFailure() {
+        return failure(FailureEnum.EXISTS_FAILURE);
+    }
+
+    /**
+     * 已存在
+     * @param msg
+     */
+    public static Result existFailure(String msg) {
+        return failure(FailureEnum.EXISTS_FAILURE, msg);
+    }
+
+    /**
+     * 记录不存在
+     */
+    public static Result notExistFailure() {
+        return failure(FailureEnum.NOTEXIST_FAILURE);
+    }
+    /**
+     * 不存在
+     * @param msg
+     */
+    public static Result notExistFailure(String msg) {
+        return failure(FailureEnum.NOTEXIST_FAILURE, msg);
+    }
+
+    /**
      * 新增失败
      * @return
      */
-    public static Result failureOfInsert(Object data) {
+    public static Result insertFailure(Object data) {
         return failure(FailureEnum.OPERATION_FAILURE, ADD_FAIL, data);
     }
 
@@ -148,7 +197,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result failureOfUpdate(Object data) {
+    public static Result updateFailure(Object data) {
         return failure(FailureEnum.OPERATION_FAILURE, UPDATE_FAIL, data);
     }
 
@@ -157,7 +206,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result failureOfDelete(Object data) {
+    public static Result deleteFailure(Object data) {
         return failure(FailureEnum.OPERATION_FAILURE, DELETE_FAIL, data);
     }
 

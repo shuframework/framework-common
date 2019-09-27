@@ -9,18 +9,18 @@ public class SortUtil {
      */
     public static void bubbleSort(int[] intArr) {
         int max = intArr.length - 1; //外层循环次数
-        int compareCounts = max;//内层循环次数
-        int temp = 0;
+        int compareCounts = max; //内层循环次数
+        int temp = 0; //避免多次交互的局部变量消耗
         for (int i = 0; i < max; i++) {
-            //假设每次有序
-            boolean flag = true;
-            //上次最后发生交换的位置索引
-            int lastChangeIndex = 0;
+
+            boolean flag = true; //假设每次有序
+            int lastChangeIndex = 0; //上次最后发生交换的位置索引
             for (int j = 0; j < compareCounts; j++) {
                 if (intArr[j] > intArr[j + 1]) {
                     temp = intArr[j];
                     intArr[j] = intArr[j + 1];
                     intArr[j + 1] = temp;
+
                     flag = false;
                     lastChangeIndex = j;
                 }

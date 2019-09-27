@@ -1,4 +1,4 @@
-package com.shuframework.commonbase.util;
+package com.shuframework.commonbase.util.lang;
 
 import com.shuframework.commonbase.exception.UtilException;
 
@@ -530,18 +530,18 @@ public class ValidateUtil {
 		String regex = sb.toString();
 		return match(regex, str);
 	}
-  
+
     /**
      * @param regex 正则表达式字符串 
      * @param str 要匹配的字符串 
      * @return 如果str 符合 regex的正则表达式格式,返回true, 否则返回 false; 
      */  
 	public static boolean match(String regex, String str) {
-		//有推荐说不要在方法内这样使用Pattern
+		//有推荐说不要在方法内这样使用Pattern, 每次调用该方法，均会预编译
 //		Pattern pattern = Pattern.compile(regex);
 //		Matcher matcher = pattern.matcher(str);
 //		return matcher.matches();
-		//第2种 其底层是与第一种一样
+//		//第2种 其底层是与第一种一样, 但没有使用预编译
 		return Pattern.matches(regex, str);
 //		//第3种String的方法, 其底层是Pattern.matches(regex, this);
 //		return str.matches(regex);

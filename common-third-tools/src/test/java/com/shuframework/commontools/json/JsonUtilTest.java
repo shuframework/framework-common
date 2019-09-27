@@ -2,10 +2,15 @@ package com.shuframework.commontools.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.shuframework.commontools.BookInfo;
 import com.shuframework.commontools.BookInfoList;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import org.springframework.util.Assert;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,21 +20,23 @@ import static org.junit.Assert.*;
 public class JsonUtilTest {
 
     @Test
-    public void jsonStr2Obj() {
-
-//        BookInfoList<Map<String, Object>> list = new BookInfoList<>();
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("a", 1);
-//        list.setResult(map);
-//
-//        String jsonStr = JSON.toJSONString(list);
-//        System.out.println(jsonStr);
-        String jsonStr = "{\"result\":{\"a\":1}}";
-        BookInfoList<Map<String, Object>> list2 = JSON.parseObject(jsonStr, BookInfoList.class);
-        Map<String, Object> map2 = list2.getResult();
-        System.out.println(map2);
+    public void obj2JsonStr2() {
+        String checkAppId = "wxcbd032341f7648c3,wx46fe2d54a90b9784,wxfe6747561243dd19,wx7944899c8f547e66";
+        String appId = "wxfe6747561243dd19";
+        Assert.isTrue(!(StringUtils.isBlank(appId) || checkAppId.contains(appId)), "微信支付暂不可用，请使用支付宝支付或在电脑网站上【www.xubei.com】进行微信充值");
     }
 
+    @Test
+    public void obj2JsonStr() {
+
+        BookInfo bookInfo = new BookInfo();
+        bookInfo.setName("aa");
+        bookInfo.setPrice(3.56);
+        bookInfo.setPrice2(new BigDecimal("5.93"));
+        bookInfo.setCreateTime(new Date());
+        String str = JsonUtil.obj2JsonStr(bookInfo);
+        System.out.println(str);
+    }
 
     @Test
     public void jsonStr2Obj_2() {

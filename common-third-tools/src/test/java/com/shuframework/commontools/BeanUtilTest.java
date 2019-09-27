@@ -1,5 +1,6 @@
 package com.shuframework.commontools;
 
+import com.shuframework.commonbase.enums.NumberSystemEnum;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
@@ -16,6 +17,15 @@ import static org.junit.Assert.*;
  * @author shuheng
  */
 public class BeanUtilTest {
+
+    public final static int PACKET_TYPE = NumberSystemEnum.BINARY_2.getCode();
+    public static final String BEAN_NAME_PREFIX = "in";
+
+    @Test
+    public void add() {
+        String s = BEAN_NAME_PREFIX + PACKET_TYPE;
+        System.out.println(s);
+    }
 
     @Test
     public void beanToMap1() {

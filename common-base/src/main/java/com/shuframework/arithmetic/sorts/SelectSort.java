@@ -14,15 +14,15 @@ public class SelectSort {
     public static void sort(int[] intArr) {
         //避免循环内不停的创建于回收变量
         int temp = 0;
-        int minValue = 0;
-        int maxValue = 0;
+//        int minValue = 0;
+//        int maxValue = 0;
         //一趟走完 left++, right-- 后，总趟数是 length/2 (如5/2=2)
         for (int left = 0, right = intArr.length - 1; left < right; left++, right--) {
             System.out.println("第" + (left + 1) + "趟");
             int compareCount = 0;
             //第一个数与最后一位依次比较，每趟找出左边为最小，右边为最大值，下次下标依次移到
             for (int j = left; j < right; j++) {
-                //放在内层循环是因为，可能每次有交换，需要保证其是最新值,因为变量用不上所以不用定义
+                //放在内层循环是因为可能每次有交换，需要保证其是最新值,因为变量用不上所以不用定义
 //                minValue = intArr[left];
 //                maxValue = intArr[right];
                 temp = intArr[j];

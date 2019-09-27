@@ -14,21 +14,25 @@ public class BubbleSort {
     //这个更高效 可以减少局部有序的比较次数
     //第一次排序后部分已经有序, 那么开始比较的位置就往前了
     public static void sort(int[] intArr) {
-        //max为 数组长度-1
+        // 外层循环次数
         int max = intArr.length - 1;
-        //记录上次发生交换位置的index
+        // 内层循环次数：记录上次发生交换位置的index
         int secondCount = max;
+        //避免多次交互的局部变量消耗
+        int temp = 0;
         for (int i = 0; i < max; i++) {
             System.out.println("第" + (i + 1) + "趟");
             //假设每一趟开始都是有序
             boolean flag = true;
+            //上次最后发生交换的位置索引
             int lastChangeIndex = 0;
             for (int j = 0; j < secondCount; j++) {
                 if (intArr[j] > intArr[j + 1]) {
                     //2数互换
-                    int temp = intArr[j];
+                    temp = intArr[j];
                     intArr[j] = intArr[j + 1];
                     intArr[j + 1] = temp;
+
                     flag = false;
                     lastChangeIndex = j;
                 }
@@ -42,6 +46,7 @@ public class BubbleSort {
         }
     }
 
+    // 尾部数据局部有序后，内层循环的次数还是 max - i
     public static void sortHasFlag(int[] intArr) {
         //max为 数组长度-1
         int max = intArr.length - 1;

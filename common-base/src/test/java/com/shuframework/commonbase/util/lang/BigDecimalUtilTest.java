@@ -74,8 +74,8 @@ public class BigDecimalUtilTest {
         System.out.println(num+" ,ceil:"+r1);
         BigDecimal r2 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_UP);
         System.out.println(num+" ,up:"+r2);
-//        BigDecimal r3 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_HALF_UP);
-//        System.out.println(num+" ,half_up:"+r3);
+        BigDecimal r3 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_HALF_UP);
+        System.out.println(num+" ,half_up:"+r3);
     }
 
     private void down(BigDecimal num) {
@@ -89,7 +89,7 @@ public class BigDecimalUtilTest {
 
 
     @Test
-    public void floor_test1() {
+    public void ceil_test1() {
         BigDecimal num1 = BigDecimalUtil.ceil(new BigDecimal("0.4"));
         System.out.println(num1);
     }

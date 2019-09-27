@@ -1,7 +1,7 @@
 package com.shuframework.commonbase.util.collection;
 
 import com.shuframework.commonbase.util.SystemUtil;
-import com.shuframework.commonbase.util.ValidateUtil;
+import com.shuframework.commonbase.util.lang.ValidateUtil;
 import com.shuframework.commonbase.util.lang.StringUtil;
 
 import java.lang.reflect.Array;

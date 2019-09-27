@@ -1,5 +1,6 @@
 package com.shuframework.jdkdemo.testmodel;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -13,6 +14,7 @@ public class BookInfo {
 	private Integer id;
 	private String name;
 	private Double price;
+	private BigDecimal priceBig;
 	private Date createTime;
 	
 	private BookInfo2 bookInfo2;
@@ -56,6 +58,14 @@ public class BookInfo {
 		this.price = price;
 	}
 
+	public BigDecimal getPriceBig() {
+		return priceBig;
+	}
+
+	public void setPriceBig(BigDecimal priceBig) {
+		this.priceBig = priceBig;
+	}
+
 	public BookInfo() {
 	}
 
@@ -68,6 +78,13 @@ public class BookInfo {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+	}
+
+	public BookInfo(Integer id, String name, Double price, BigDecimal priceBig) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.priceBig = priceBig;
 	}
 
 	public BookInfo(Integer id, String name, Date createTime) {
@@ -85,7 +102,8 @@ public class BookInfo {
 
 	@Override
 	public String toString() {
-		return "BookInfo [id=" + id + ", name=" + name + ", price=" + price + ", createTime=" + createTime + "]";
+		return "BookInfo [id=" + id + ", name=" + name + ", price=" + price + ", priceBig=" + priceBig
+				+ ", createTime=" + createTime + "]";
 	}
 
 }

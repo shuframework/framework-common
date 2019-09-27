@@ -1,5 +1,6 @@
 package com.shuframework.commonbase.util;
 
+import com.shuframework.commonbase.util.lang.ValidateUtil;
 import org.junit.Test;
 
 import java.math.BigDecimal;

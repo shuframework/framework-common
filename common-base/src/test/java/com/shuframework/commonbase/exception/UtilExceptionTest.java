@@ -24,4 +24,8 @@ public class UtilExceptionTest {
 
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
