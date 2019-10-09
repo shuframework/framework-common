@@ -7,14 +7,14 @@ import java.io.Serializable;
  * 
  * @author shuheng
  */
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
 
-	private static final long serialVersionUID = 5576237395711742681L;
+	private static final long serialVersionUID = 1L;
 
 	private boolean success = false;
 	private int code;
 	private String message;
-	private Object data;
+	private T data;
 
 	public Result(){}
 	
@@ -23,7 +23,7 @@ public class Result implements Serializable {
 		this.message = message;
 	}
 
-	public Result(int code, String message, Object data) {
+	public Result(int code, String message, T data) {
 		this.code = code;
 		this.message = message;
 		this.data = data;
@@ -35,7 +35,7 @@ public class Result implements Serializable {
 		this.message = message;
 	}
 	
-	public Result(boolean isSuccess, int code, String message, Object data) {
+	public Result(boolean isSuccess, int code, String message, T data) {
 		this.success = isSuccess;
 		this.code = code;
 		this.message = message;
@@ -55,11 +55,11 @@ public class Result implements Serializable {
 		this.code = code;
 	}
 
-	public Object getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 

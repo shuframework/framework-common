@@ -9,6 +9,11 @@ import org.junit.Test;
 public class DemoTest {
 
     @Test
+    public void test2() {
+        System.out.println(System.currentTimeMillis());
+    }
+
+    @Test
     public void test1() {
         //java.lang.NullPointerException
         method(null);

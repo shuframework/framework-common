@@ -7,6 +7,7 @@ public class APersonBuilder implements PersonBuild {
 
     @Override
     public void buildHead(String head) {
+        // 实际过程中，这里的指导过程可能会很复杂
         System.out.println("person A 的头：" + head);
     }
 

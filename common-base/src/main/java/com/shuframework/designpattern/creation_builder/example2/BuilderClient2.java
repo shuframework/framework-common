@@ -1,6 +1,7 @@
 package com.shuframework.designpattern.creation_builder.example2;
 
-public class Client {
+public class BuilderClient2 {
+
     public static void main(String[] args) {
         //创建构建器
         ConcreteBuilder builder = new ConcreteBuilder("001",12345L,67890L);

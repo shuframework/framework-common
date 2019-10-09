@@ -12,6 +12,7 @@ public class BuilderClient {
         PersonBuild builderA = new APersonBuilder();
         Director director1 = new Director(builderA);
         director1.init("北京","天津","北京");
+
         System.out.println("==========");
         PersonBuild builderB = new BPersonBuilder();
         Director director2 = new Director(builderB);

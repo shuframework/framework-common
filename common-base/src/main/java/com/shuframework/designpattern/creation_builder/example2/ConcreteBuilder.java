@@ -1,9 +1,10 @@
 package com.shuframework.designpattern.creation_builder.example2;
 
 /**
- * 构造保险合同对象的构建器
+ * 构造保险合同对象的构建器（一般不会单独构建，而是将build放入内部类）
  */
 public class ConcreteBuilder {
+
     private String contractId;
     private String personName;
     private String companyName;

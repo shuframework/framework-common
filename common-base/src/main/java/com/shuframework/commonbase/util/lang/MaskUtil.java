@@ -1,5 +1,7 @@
 package com.shuframework.commonbase.util.lang;
 
+import com.shuframework.commonbase.util.SystemUtil;
+
 /**
  * 脱敏处理
  *
@@ -54,12 +56,12 @@ public class MaskUtil {
      * @return
      */
     public static String maskAddress(String address) {
-        if (StringUtil.isEmpty(address) || (address.length() < 8)) {
+        if (StringUtil.isEmpty(address) || (address.length() < 7)) {
             return address;
         }
 //        return address.replaceAll("(?<=\\w{6})\\w", "*");
         // 截取字符串
-        return "";
+        return address.substring(0, 6) + "******";
     }
 
 }
