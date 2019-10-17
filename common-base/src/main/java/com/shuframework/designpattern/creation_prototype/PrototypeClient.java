@@ -9,8 +9,14 @@ public class PrototypeClient {
     @Test
     public void test(){
         Date date = new Date();
+
+        MyCompany company = new MyCompany();
+        company.setName("小明公司");
+        company.setCreateTime(date);
+        company.setCounts(100);
+
         MyResume r1 = new MyResume("小明", date, "男");
-        r1.setWork("1", "xx公司");
+        r1.setWork("1", company);
 
         //复制
         MyResume r2 = null;
@@ -27,7 +33,12 @@ public class PrototypeClient {
         }
 
         //直接修改对象的值时 会导致克隆的对象数据一起改变
-        date.setTime(15334342312133L);
+//        date.setTime(15334342312133L);
+        r1.setSex("女");//修改原始对象的值，对clone没影响
+
+        //修改原始对象包含的引用对象的属性时，地址不变的原因导致 克隆的对象数据一起改变
+        //实现的步骤是 引用对象 重新实现clone方法，原始对象的clone方法进行递归赋值
+        company.setCounts(200);
 
 //        MyResume{name='小明', age='23', sex='男', timeArea='1', company='xx公司'}
 //        MyResume{name='小王', age='23', sex='男', timeArea='1', company='xx公司'}

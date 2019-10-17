@@ -18,14 +18,20 @@ public class MyResume implements Cloneable {
     /** 工作年限 */
     private String timeArea;
     /** 公司 */
-    private String company;
+//    private String company;
+    private MyCompany company;
 
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
         // 直接调用object对象的clone()方法！（浅克隆）
         // 深克隆 建议采用io流的对象读写来实现
-        return super.clone();
+//        return super.clone();
+        //这样的克隆很麻烦，如果引用对象里面的引用对象修改了就要递归修改
+        //一个方便的深克隆 可以采用流的读写来实现
+        MyResume myResume = (MyResume) super.clone();
+        myResume.setCompany((MyCompany) this.company.clone());
+        return myResume;
     }
 
     public MyResume(String name, Date birthday, String sex) {
@@ -34,7 +40,7 @@ public class MyResume implements Cloneable {
         this.sex = sex;
     }
 
-    public void setWork(String timeArea, String company){
+    public void setWork(String timeArea, MyCompany company){
         this.timeArea = timeArea;
         this.company = company;
     }
@@ -44,7 +50,7 @@ public class MyResume implements Cloneable {
         return "MyResume{" +
                 "name='" + name + '\'' +
 //                ", age='" + age + '\'' +
-                ", birthday='" + birthday + '\'' +
+                ", birthday='" + birthday.toString() + '\'' +
                 ", sex='" + sex + '\'' +
                 ", timeArea='" + timeArea + '\'' +
                 ", company='" + company + '\'' +
@@ -83,11 +89,11 @@ public class MyResume implements Cloneable {
         this.timeArea = timeArea;
     }
 
-    public String getCompany() {
+    public MyCompany getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(MyCompany company) {
         this.company = company;
     }
 }

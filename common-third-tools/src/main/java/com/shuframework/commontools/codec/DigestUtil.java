@@ -19,6 +19,9 @@ public class DigestUtil {
 	public static String md5Hex(String str) {
 		return DigestUtils.md5Hex(str);
 	}
+	public static String md5Hex(byte[] data) {
+		return DigestUtils.md5Hex(data);
+	}
 	
 	/**
 	 * sha1 加密。返回16进制的字符串,长度40位（不可逆）
@@ -27,6 +30,9 @@ public class DigestUtil {
 	 */
 	public static String sha1Hex(String str) {
 		return DigestUtils.sha1Hex(str);
+	}
+	public static String sha1Hex(byte[] data) {
+		return DigestUtils.sha1Hex(data);
 	}
 	
 	/**
@@ -37,5 +43,7 @@ public class DigestUtil {
 	public static String sha256Hex(String str) {
 		return DigestUtils.sha256Hex(str);
 	}
-	
+	public static String sha256Hex(byte[] data) {
+		return DigestUtils.sha256Hex(data);
+	}
 }

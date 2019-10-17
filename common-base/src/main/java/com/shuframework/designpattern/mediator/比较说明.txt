@@ -7,3 +7,5 @@ example2
 
 example3
     具体对象是抽象类，中介者是接口 与example1的中介者是抽象类没什么大的区别
+
+标准的中介者是 example3

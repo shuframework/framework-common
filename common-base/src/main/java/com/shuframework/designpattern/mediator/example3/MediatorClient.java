@@ -14,6 +14,7 @@ public class MediatorClient {
         //具体对象 认识中介者
         USA usa = new USA(mediator);
         Iraq iraq = new Iraq(mediator);
+        Iran iran = new Iran(mediator);
 
         usa.declare("不准研发核武器");
         System.out.println("-------------");

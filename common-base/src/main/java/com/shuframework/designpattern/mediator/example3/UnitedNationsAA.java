@@ -21,6 +21,7 @@ public class UnitedNationsAA implements UnitedNations {
      */
     @Override
     public void declare(String name, String message) {
+        //这里的业务一般会比较复杂，甚至是顺序执行 colleague(同事类)
         for (String key : map.keySet()) {
             if (!key.equals(name)){
                 map.get(key).getMessage(message);
