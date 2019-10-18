@@ -2,6 +2,7 @@ package com.shuframework.commonbase.util.lang;
 
 import com.shuframework.commonbase.enums.DatePatternEnum;
 
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -35,7 +36,7 @@ public class DateUtil {
      * @param datePattern String 日期格式
      * @return
      */
-    public static Date strToDate(String dateStr, String datePattern) {
+    public static Date parseDate(String dateStr, String datePattern) {
         if (StringUtil.isEmpty(dateStr)) {
             return null;
         }
@@ -51,8 +52,8 @@ public class DateUtil {
      * @param dateStr String 日期字符串
      * @return Date
      */
-    public static Date strToDate(String dateStr) {
-        return strToDate(dateStr, YMD_HMS);
+    public static Date parseDate(String dateStr) {
+        return parseDate(dateStr, YMD_HMS);
     }
 
     /**
@@ -62,8 +63,8 @@ public class DateUtil {
      * @param dateStr String 日期字符串
      * @return Date
      */
-    public static Date strToDateShort(String dateStr) {
-        return strToDate(dateStr, YMD);
+    public static Date parseDateShort(String dateStr) {
+        return parseDate(dateStr, YMD);
     }
 
     /**
@@ -73,7 +74,7 @@ public class DateUtil {
      * @param datePattern String 日期格式
      * @return
      */
-    public static String dateToStr(Date date, String datePattern) {
+    public static String format(Date date, String datePattern) {
         if (date == null) {
             return "";
         }
@@ -87,28 +88,52 @@ public class DateUtil {
      * @param date Date 日期对象
      * @return
      */
-    public static String dateToStr(Date date) {
-        return dateToStr(date, YMD_HMS);
+    public static String format(Date date) {
+        return format(date, YMD_HMS);
     }
 
     /**
-     * 将指定时间戳(timestamp) 转换成 格式化日期(Date),格式是yyyy-MM-dd HH:mm:ss
+     * 将指定时间戳(timestamp 毫秒) 转换成String ,格式是yyyy-MM-dd HH:mm:ss
      *
      * @param timestamp
      * @return
      */
-    public static Date timestampToDate(long timestamp) {
-        return timestampToDate(timestamp, YMD_HMS);
+    public static String format(long timestamp) {
+        return format(timestamp, YMD_HMS);
     }
 
     /**
-     * 将指定时间戳(timestamp) 转换成 格式化日期(Date)
+     * 将指定时间戳(timestamp 毫秒) 转换成String ,格式是yyyy-MM-dd HH:mm:ss
+     *
+     * @param timestamp
+     * @param datePattern
+     * @return
+     */
+    public static String format(long timestamp, String datePattern) {
+        SimpleDateFormat sd = new SimpleDateFormat(datePattern);
+        String dateStr = sd.format(timestamp);
+        Date date = sd.parse(dateStr, new ParsePosition(0));
+        return sd.format(date);
+    }
+
+    /**
+     * 将指定时间戳(timestamp 毫秒) 转换成 格式化日期(Date),格式是yyyy-MM-dd HH:mm:ss
+     *
+     * @param timestamp
+     * @return
+     */
+    public static Date format2Date(long timestamp) {
+        return format2Date(timestamp, YMD_HMS);
+    }
+
+    /**
+     * 将指定时间戳(timestamp 毫秒) 转换成 格式化日期(Date)
      *
      * @param timestamp   时间戳
      * @param datePattern 日期格式
      * @return
      */
-    public static Date timestampToDate(long timestamp, String datePattern) {
+    public static Date format2Date(long timestamp, String datePattern) {
         SimpleDateFormat sd = new SimpleDateFormat(datePattern);
         String dateStr = sd.format(timestamp);
         return sd.parse(dateStr, new java.text.ParsePosition(0));
@@ -121,7 +146,7 @@ public class DateUtil {
      */
     public static String today2Str() {
         Date date = new Date();
-        return dateToStr(date, DatePatternEnum.YMD_HMS_.getCode());
+        return format(date, DatePatternEnum.YMD_HMS_.getCode());
     }
 
     /**
@@ -131,7 +156,7 @@ public class DateUtil {
      */
     public static String today2Str(DatePatternEnum dateEnum) {
         Date date = new Date();
-        return dateToStr(date, dateEnum.getCode());
+        return format(date, dateEnum.getCode());
     }
 
 ////////////////////////////////////////

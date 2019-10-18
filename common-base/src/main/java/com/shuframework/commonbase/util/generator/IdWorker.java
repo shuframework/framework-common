@@ -17,7 +17,8 @@ public class IdWorker {
 
     //内部类
     private static class InnerIdWorker {
-        private static final IdWorker instance = new IdWorker(30, 30);
+        // 建议 workerId 根据不同的服务器来变动，
+        private static final IdWorker instance = new IdWorker(1, 1);
     }
 
     public static IdWorker getInstance() {
@@ -26,9 +27,15 @@ public class IdWorker {
 
     /**
      * 起始时间戳 2018-01-01
+     * 截止到2019-10 产生18位，订单号是12位
      */
-    private final long epoch = 1514736000000L;//2018-01-01  产生18位
-//    private final long epoch = 1483200000000L; //2017-01-01  产生18位
+    private final long epoch = 1514736000000L;
+//    //2019-01-01  截止到2019-10 产生18位，订单号是11位
+//    private final long epoch = 1546272000000L;
+//    //2008-01-01  截止到2019-10 产生19位，订单号是12位
+//    private final long epoch = 1199116800000L;
+//    //2006-01-01  截止到2019-10 产生19位，订单号是12位
+//    private final long epoch = 1136044800000L;
 
     /**
      * 时间位取&
@@ -48,7 +55,7 @@ public class IdWorker {
     private final long dataCenterIdBits = FIVE;
 
     /**
-     * 支持的最大机器ID,结果是31
+     * 支持的最大机器ID,结果是31 (2^5-1,从0开始的)
      */
     private final long maxWorkerId = ~(-1L << workerIdBits);
 
@@ -193,13 +200,4 @@ public class IdWorker {
     }
 
 
-//    private static void test(long dataCenterId, long workerId) {
-////		IdWorker idWorker = IdWorker.getInstance();
-//        IdWorker idWorker = new IdWorker(dataCenterId, workerId);
-//        for (int i = 0; i < 3; i++) {
-//            long nextId = idWorker.nextId();
-//            System.out.println(nextId);
-//            System.out.println((nextId + "").length());
-//        }
-//    }
 }

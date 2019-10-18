@@ -108,14 +108,27 @@ public class SystemUtil {
     }
 
     /**
-     * 获得订单编码(用idwork算法) 2位类型前缀+18位
+     * 获得订单id(用idwork算法) 一般是18位
      *
      * @return
      */
-    public static String getOrderCode() {
-        String orderCode = IdGeneratorTypeEnum.ORDER.getCode() + IdWorker.getInstance().nextId();
-        return orderCode;
+    public static long getOrderId() {
+        return IdWorker.getInstance().nextId();
     }
+
+    /**
+     * 获得订单编码(用idwork算法 转成字符串)
+     * 36进制 包含了10数字和26字母
+     *
+     * @return
+     */
+    public static String convertOrderId2Code(long workId) {
+        return Long.toString(workId, Character.MAX_RADIX);
+    }
+    public static long convertOrderCode2Id(String workOrderCode) {
+        return Long.parseLong(workOrderCode, Character.MAX_RADIX);
+    }
+
 
     /**
      * 解析URL地址的参数为map

@@ -9,22 +9,30 @@ import java.util.Map;
 
 public class SystemUtilTest {
 
-	public static long convertNoToId(String orderGameNo) {
-		return Long.parseLong(orderGameNo, Character.MAX_RADIX);
+	@Test
+	public void orderId_test() {
+//		for (int i = 0; i < 50; i++) {
+			long orderId = SystemUtil.getOrderId();
+			System.out.println(orderId);
+			System.out.println(String.valueOf(orderId).length());
+
+			String orderCode = SystemUtil.convertOrderId2Code(orderId);
+			System.out.println(orderCode);
+			System.out.println(orderCode.length());
+//		}
 	}
 
-	@Test
-	public void convertNoToId_test() {
-		String orderGameNo = "13l6555skc8e16";
-		long id = convertNoToId(orderGameNo);
-		System.out.println(id);
-	}
 
 	@Test
 	public void urlParam2Map_test() {
-		String url = "http://xxxxx?p1=v1&p2=v2";
-		Map<String, String> map = SystemUtil.urlParam2Map(url);
-		System.out.println(map);
+//		String url = "http://xxxxx?p1=v1&p2=v2";
+//		Map<String, String> map = SystemUtil.urlParam2Map(url);
+//		System.out.println(map);
+		long workerIdBits = 5L;
+		long maxWorkerId = ~(-1L << workerIdBits);
+		long maxWorkerId2 = (1L << workerIdBits) - 1;
+		System.out.println(maxWorkerId);
+		System.out.println(maxWorkerId2);
 	}
 	
 	@Test
@@ -55,7 +63,7 @@ public class SystemUtilTest {
 	public void username_test() {
 		String phone = "13986109774";
 		String str = phone.substring(phone.length() - 4);
-		String dateToStr = DateUtil.dateToStr(new Date(), DatePatternEnum.YMD_.getCode());
+		String dateToStr = DateUtil.format(new Date(), DatePatternEnum.YMD_.getCode());
 		String verifycode = SystemUtil.verifyCodeHasLetter();
 //		System.out.println(verifycode);
 

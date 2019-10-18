@@ -199,7 +199,7 @@ public class LunarDateUtil {
 
     public static void main(String[] args) throws ParseException {
 //        Date date = new Date();
-        Date date = DateUtil.strToDateShort("2019-04-18");
+        Date date = DateUtil.parseDateShort("2019-04-18");
         Calendar today = Calendar.getInstance();
         today.setTime(date);
         LunarDateUtil lunar = new LunarDateUtil(today);

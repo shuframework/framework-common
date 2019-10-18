@@ -64,7 +64,7 @@ public class MyBeanUtilTest {
 //		Object property = MyBeanUtil.getPropertyByField(bookInfo, propertyName);
 		System.out.println(property);
 		Date createTime = (Date)property;
-		System.out.println(DateUtil.dateToStr(createTime));
+		System.out.println(DateUtil.format(createTime));
 	}
 	@Test
 	public void property_test2() {
@@ -75,7 +75,7 @@ public class MyBeanUtilTest {
 		Object property = MyBeanUtil.getPropertyByField(bookInfo, propertyName);
 		System.out.println(property);
 		Date createTime = (Date)property;
-		System.out.println(DateUtil.dateToStr(createTime));
+		System.out.println(DateUtil.format(createTime));
 	}
 	
 	@Test

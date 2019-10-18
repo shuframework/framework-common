@@ -8,9 +8,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author shuheng
@@ -24,17 +21,17 @@ public class StreamTest {
         BookInfo bookInfo1 = new BookInfo();
         bookInfo1.setId(1);
         bookInfo1.setName("aa");
-        bookInfo1.setCreateTime(DateUtil.strToDateShort("2019-07-24"));
+        bookInfo1.setCreateTime(DateUtil.parseDateShort("2019-07-24"));
 
         BookInfo bookInfo2 = new BookInfo();
         bookInfo2.setId(2);
         bookInfo2.setName("bb");
-        bookInfo2.setCreateTime(DateUtil.strToDateShort("2019-07-26"));
+        bookInfo2.setCreateTime(DateUtil.parseDateShort("2019-07-26"));
 
         BookInfo bookInfo3 = new BookInfo();
         bookInfo3.setId(3);
         bookInfo3.setName("cc");
-        bookInfo3.setCreateTime(DateUtil.strToDateShort("2019-07-25"));
+        bookInfo3.setCreateTime(DateUtil.parseDateShort("2019-07-25"));
 
         list.add(bookInfo1);
         list.add(bookInfo2);
