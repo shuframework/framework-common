@@ -66,7 +66,7 @@ public class VerifyCodeUtil {
      * @param w
      * @param h
      * @param outputFile
-     * @param verifySize
+     * @param verifySize  验证码长度
      */
     public static String outputVerifyImage(int w, int h, File outputFile, int verifySize) {
         String verifyCode = generateVerifyCode(verifySize);
@@ -80,7 +80,7 @@ public class VerifyCodeUtil {
      * @param w
      * @param h
      * @param os
-     * @param verifySize
+     * @param verifySize  验证码长度
      */
     public static String outputVerifyImage(int w, int h, OutputStream os, int verifySize) {
         String verifyCode = generateVerifyCode(verifySize);
@@ -91,7 +91,7 @@ public class VerifyCodeUtil {
     /**
      * 输出随机验证码图片流,并返回验证码值
      * @param os
-     * @param verifySize
+     * @param verifySize  验证码长度
      */
     public static String outputVerifyImage(OutputStream os, int verifySize) {
         return outputVerifyImage(150, 40, os, verifySize);
@@ -116,7 +116,7 @@ public class VerifyCodeUtil {
     /**
      * 输出随机验证码图片流,并返回验证码值
      * @param response
-     * @param verifySize
+     * @param verifySize  验证码长度
      */
     public static String outputVerifyImage(HttpServletResponse response, int verifySize) {
         // 设置响应的类型格式为图片格式
@@ -312,7 +312,7 @@ public class VerifyCodeUtil {
 //            String verifyCode = generateVerifyCode(4);
 //            System.out.println(verifyCode);
 //        }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             String path = "D:/" + System.currentTimeMillis() + ".png";
             File file = new File(path);
             String vcode = VerifyCodeUtil.outputVerifyImage(150, 40, file, 4);

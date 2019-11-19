@@ -24,10 +24,16 @@
             <artifactId>spring-context</artifactId>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
+        <!--
         <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>

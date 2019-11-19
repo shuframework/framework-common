@@ -158,24 +158,6 @@ public class OkHttpClientUtil {
     }
 
 
-    private Result getResult(Request request) {
-        try {
-            logger.info("okhttp3请求参数：{}", request);
-            Response response = okHttpClient.newCall(request).execute();
-            String str = response.body().string();
-            // 解析返回结果
-            Map returnMap = JsonUtil.jsonStr2Map(str);
-            Result result = ResultUtil.success(returnMap);
-            // 这里也可以对result 进行再次解析为满足业务的对象
-            logger.info("okhttp3请求返回结果：{}", result.toString());
-            return result;
-        } catch (IOException e) {
-            logger.error("异常信息：{}", e.getMessage());
-        }
-        return null;
-    }
-
-
     private String getString(Request request) {
         try {
             logger.info("okhttp3请求参数：{}", request);
