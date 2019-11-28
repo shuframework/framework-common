@@ -1,9 +1,7 @@
 package com.shuframework.commontools.lang3;
 
-import com.shuframework.commontools.codec.DigestUtil;
+import com.shuframework.commontools.codec.DigestUtilByCommon;
 import org.junit.Test;
-
-import java.lang.reflect.InvocationHandler;
 
 /**
  * @author shuheng
@@ -46,7 +44,7 @@ public class ClassUtilsTest {
 
     @Test
     public void class_test2() {
-        Class clz = DigestUtil.class;
+        Class clz = DigestUtilByCommon.class;
         System.out.println(ClassUtils.getSimpleName(clz));
 //        //与getSimpleName 效果类似
 //        System.out.println(ClassUtils.getShortClassName(clz));

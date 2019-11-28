@@ -1,5 +1,7 @@
 package com.shuframework.jdkdemo.testmodel;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -9,6 +11,7 @@ import java.util.Date;
  * @author shuheng
  *
  */
+@Data
 public class BookInfo {
 
 	private Integer id;
@@ -18,53 +21,7 @@ public class BookInfo {
 	private Date createTime;
 	
 	private BookInfo2 bookInfo2;
-	public BookInfo2 getBookInfo2() {
-		return bookInfo2;
-	}
 
-	public void setBookInfo2(BookInfo2 bookInfo2) {
-		this.bookInfo2 = bookInfo2;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public BigDecimal getPriceBig() {
-		return priceBig;
-	}
-
-	public void setPriceBig(BigDecimal priceBig) {
-		this.priceBig = priceBig;
-	}
 
 	public BookInfo() {
 	}
@@ -100,10 +57,10 @@ public class BookInfo {
 		this.createTime = createTime;
 	}
 
-	@Override
-	public String toString() {
-		return "BookInfo [id=" + id + ", name=" + name + ", price=" + price + ", priceBig=" + priceBig
-				+ ", createTime=" + createTime + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "BookInfo [id=" + id + ", name=" + name + ", price=" + price + ", priceBig=" + priceBig
+//				+ ", createTime=" + createTime + "]";
+//	}
 
 }

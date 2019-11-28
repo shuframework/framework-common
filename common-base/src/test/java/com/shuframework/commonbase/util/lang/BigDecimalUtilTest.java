@@ -21,7 +21,7 @@ public class BigDecimalUtilTest {
     public void pow_test2() {
         BigDecimal num1 = new BigDecimal("2");
 //        BigDecimal num2 = new BigDecimal("3");
-        BigDecimal result = num1.pow(2);
+        BigDecimal result = num1.pow(3);
         System.out.println(result);
     }
     @Test
@@ -74,8 +74,6 @@ public class BigDecimalUtilTest {
         System.out.println(num+" ,ceil:"+r1);
         BigDecimal r2 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_UP);
         System.out.println(num+" ,up:"+r2);
-        BigDecimal r3 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_HALF_UP);
-        System.out.println(num+" ,half_up:"+r3);
     }
 
     private void down(BigDecimal num) {
@@ -83,8 +81,6 @@ public class BigDecimalUtilTest {
         System.out.println(num+" ,floor:"+r1);
         BigDecimal r2 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_DOWN);
         System.out.println(num+" ,down:"+r2);
-        BigDecimal r3 = num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_HALF_DOWN);
-        System.out.println(num+" ,half_down:"+r3);
     }
 
 
@@ -116,4 +112,45 @@ public class BigDecimalUtilTest {
         down(num13);
     }
 
+
+    @Test
+    public void round_test1() {
+        //ROUND_HALF_DOWN 若舍弃部分>.5进位
+        BigDecimal num = new BigDecimal("0.5");
+        System.out.println(num.setScale(0, BigDecimal.ROUND_HALF_DOWN)); // 0
+        System.out.println(num.setScale(0, BigDecimal.ROUND_HALF_UP)); // 1
+
+        BigDecimal num2 = new BigDecimal("0.50");
+        System.out.println(num2.setScale(0, BigDecimal.ROUND_HALF_DOWN)); // 0
+        System.out.println(num2.setScale(0, BigDecimal.ROUND_HALF_UP)); // 1
+
+        BigDecimal num3 = new BigDecimal("0.51");
+        System.out.println(num3.setScale(0, BigDecimal.ROUND_HALF_DOWN)); // 1
+        System.out.println(num3.setScale(0, BigDecimal.ROUND_HALF_UP)); // 1
+    }
+    @Test
+    public void round_test2() {
+        BigDecimal num = new BigDecimal("3.46150");
+        System.out.println(num.setScale(1, BigDecimal.ROUND_HALF_DOWN)); // 3.5
+        System.out.println(num.setScale(1, BigDecimal.ROUND_HALF_UP)); // 3.5
+        System.out.println(num.setScale(2, BigDecimal.ROUND_HALF_DOWN)); // 3.46
+        System.out.println(num.setScale(2, BigDecimal.ROUND_HALF_UP)); // 3.46
+        //若舍弃部分>.5进位
+        System.out.println(num.setScale(3, BigDecimal.ROUND_HALF_DOWN)); // 3.461
+        System.out.println(num.setScale(3, BigDecimal.ROUND_HALF_UP)); // 3.462
+    }
+
+    @Test
+    public void round_half_even_test1() {
+        BigDecimal num = new BigDecimal("3.46159");
+        // 如果舍弃部分左边的数字为偶数，则作 ROUND_HALF_DOWN
+        System.out.println(num.setScale(1, BigDecimal.ROUND_HALF_EVEN)); // 3.5
+        System.out.println(num.setScale(2, BigDecimal.ROUND_HALF_EVEN)); // 3.46
+
+        BigDecimal num2 = new BigDecimal("3.37459");
+        // 如果舍弃部分左边的数字为奇数，则作 ROUND_HALF_UP
+        System.out.println(num2.setScale(1, BigDecimal.ROUND_HALF_EVEN)); // 3.4
+        System.out.println(num2.setScale(2, BigDecimal.ROUND_HALF_EVEN)); // 3.37
+
+    }
 }

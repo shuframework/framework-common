@@ -284,6 +284,36 @@ public class BigDecimalUtil {
 	}
 
 	/**
+	 * x^n
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static BigDecimal pow(int x, int n) {
+		BigDecimal num = new BigDecimal(x);
+		return num.pow(n);
+	}
+	/**
+	 * x^n
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static BigDecimal pow(String x, int n) {
+		BigDecimal num = new BigDecimal(x);
+		return num.pow(n);
+	}
+	/**
+	 * num^n
+	 * @param num
+	 * @param n
+	 * @return
+	 */
+	public static BigDecimal pow(BigDecimal num, int n) {
+		return num.pow(n);
+	}
+
+	/**
 	 * 保留小数(四舍五入)
 	 *
 	 * @param num   需要保留的数

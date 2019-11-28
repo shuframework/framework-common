@@ -240,6 +240,22 @@ public class DateUtilTest {
 		System.out.println(list);
 	}
 
+	@Test
+	public void getDates_test2() {
+		//UTC是本地时间
+		String datetime = "2016-10-13T01:05:19.000Z";
+		String datetime2 = "2016-10-13T10:05:19Z";
+//		String time2 = datetime.replace("Z", " UTC");//UTC是本地时间
+//		Date date1 = DateUtil.parseDate(time2, "yyyy-MM-dd'T'HH:mm:ss.SSS Z");
+//		System.out.println(date1);
+
+		Date date1 = DateUtil.parseDate(datetime, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+		System.out.println(DateUtil.format(date1));
+
+		Date date2 = DateUtil.parseDate(datetime2, "yyyy-MM-dd'T'HH:mm:ss'Z'");
+		System.out.println(DateUtil.format(date2));
+	}
+
 
 
 	@Test

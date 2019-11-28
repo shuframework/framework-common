@@ -1,6 +1,6 @@
 package com.shuframework.commontools.lang3;
 
-import com.shuframework.commontools.codec.DigestUtil;
+import com.shuframework.commontools.codec.DigestUtilByCommon;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
@@ -25,8 +25,8 @@ public class FileUtils extends IOUtils {
         FileInputStream input1 = new FileInputStream(path1);
         FileInputStream input2 = new FileInputStream(path2);
 
-        String md5Hex1 = DigestUtil.md5Hex(IOUtils.toByteArray(input1));
-        String md5Hex2 = DigestUtil.md5Hex(IOUtils.toByteArray(input2));
+        String md5Hex1 = DigestUtilByCommon.md5Hex(IOUtils.toByteArray(input1));
+        String md5Hex2 = DigestUtilByCommon.md5Hex(IOUtils.toByteArray(input2));
 
         System.out.println(md5Hex1);
         System.out.println(md5Hex2);

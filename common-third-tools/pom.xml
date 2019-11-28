@@ -84,6 +84,15 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+
+        <!--加密 内置了hutool-core
+            可以去掉 commons-lang3、commons-codec、commons-io
+        -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-crypto</artifactId>
+            <version>5.0.6</version>
+        </dependency>
     </dependencies>
 
 </project>

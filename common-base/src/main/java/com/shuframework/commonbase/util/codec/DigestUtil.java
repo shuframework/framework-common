@@ -158,8 +158,7 @@ public class DigestUtil {
         try {
             mdInst = MessageDigest.getInstance(keyEnum.getKey());
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            throw new UtilException(e.getMessage());
+            throw new IllegalArgumentException(e.getMessage());
         }
         // 使用指定的字节更新摘要
         mdInst.update(data);

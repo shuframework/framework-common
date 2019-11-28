@@ -10,7 +10,12 @@ public class DemoTest {
 
     @Test
     public void test2() {
-        System.out.println(System.currentTimeMillis());
+        String s = "6436201911201658305779055860";
+        String y = s.substring(4, 8);
+        String m = s.substring(8, 10);
+        String d = s.substring(10, 12);
+        String ymd = String.format("%s-%s-%s", y,m,d);
+        System.out.println(ymd);
     }
 
     @Test
